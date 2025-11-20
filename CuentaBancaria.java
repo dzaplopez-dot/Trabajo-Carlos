@@ -10,6 +10,7 @@ public class CuentaBancaria {
         this.saldo = saldo;
     }
 
+
     public void mostrarDatos() {
         System.out.println("El numero de cuenta es: " + numeroCuenta);
         System.out.println("El titular de la cuenta es: " + titular);
@@ -41,12 +42,16 @@ public class CuentaBancaria {
     }
 
     public void depositar(double monto) {
+
         saldo = saldo + monto;
+        System.out.println("Su nuevo saldo es de: " + saldo);
+
     }
 
     public void retirar(double monto) {
-        if (saldo >= monto) {
+        if (monto <  saldo) {
             saldo = saldo - monto;
+            System.out.println("Su nuevo saldo es de : " + saldo);
         } else {
             System.out.println("Saldo insuficiente");
         }
